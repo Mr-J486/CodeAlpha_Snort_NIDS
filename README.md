@@ -1,88 +1,71 @@
-🛡️ Snort-based Network Intrusion Detection System (NIDS)
-This project demonstrates a network-based intrusion detection system using Snort, implemented as part of my Cybersecurity Internship at CodeAlpha. The system is configured to monitor traffic in real-time, detect malicious activity, and generate alerts for suspicious behavior on the network.
+# 🛡️ Snort-based Network Intrusion Detection System (NIDS)
 
-⚙️ Features
-🔍 Live Network Monitoring using Snort
+A hands-on project from my Cybersecurity Internship at CodeAlpha, showcasing how to detect real-time network threats using custom Snort v3 rules.
 
-📜 Custom Rule Configuration for:
+## ✨ Features
 
-ICMP Ping detection
+- Real-time packet monitoring on a live network
+- Custom rules for detecting:
+  - SSH, TELNET, RDP connections
+  - ICMP Ping (requests/replies)
+  - Nmap port scans
+- Alert logging for analysis
 
-RDP, SSH, TELNET connection attempts
+## ⚙️ Technologies Used
 
-🛎️ Real-time Alerting to terminal and log files
+- Snort v3
+- Linux (Ubuntu/Kali)
+- Nmap (attack simulation)
 
-🧠 Attack Simulation using tools like Nmap
+## 🕸️ Network Setup
 
-📁 Alert Logging for incident review
+- Attacker: `192.168.1.8` (used Nmap)
+- Victim: `192.168.1.9` (running Snort)
 
-📊 (Optional) Visualization of captured alerts
+## 🔐 Snort Rules Example
 
-🧠 Detection Rules Used
 snort
-Copy
-Edit
-alert tcp any any -> $HOME_NET 3389 (msg:"RDP Connection Initiation"; sid:1;)
+```alert tcp any any -> $HOME_NET 3389 (msg:"RDP Connection Initiation"; sid:1;)
 alert icmp any any -> $HOME_NET any (msg:"ICMP Ping Request"; sid:2; rev:1;)
 alert icmp $HOME_NET any -> any any (msg:"ICMP Ping Reply"; sid:3; rev:1;)
 alert tcp any any -> $HOME_NET 23 (msg:"TELNET Connection Attempt"; sid:4; rev:1;)
 alert tcp any any -> $HOME_NET 22 (msg:"SSH Handshake"; sid:5; rev:1;)
-These rules were saved in local.rules and included via snort.lua.
-
-🧪 Attack Scenario
-Simulated an Nmap scan from an attacker machine:
-
-Attacker IP: 192.168.1.8
-
-Victim IP: 192.168.1.9
-
-Snort was run on the victim machine with:
-
-bash
-Copy
-Edit
-sudo snort -c /etc/snort/snort.lua -i eth0 -A alert_fast
-🗂️ Directory Structure
-bash
-Copy
-Edit
-📦Snort-NIDS-Task
- ┣ 📁rules/
- ┃ ┗ 📄local.rules
- ┣ 📄snort.lua       # Configuration file
- ┣ 📄README.md
- ┗ 📄demo.mp4        # Optional: video demonstration
+```
 🚀 How to Run
-Install Snort (Version 3.x recommended)
+Place your rules in /etc/snort/rules/local.rules
 
-Update snort.lua to include the custom local.rules file
+Link the file inside /etc/snort/snort.lua
 
-Set your HOME_NET in snort.lua (e.g., 192.168.1.9/32)
-
-Launch Snort in alert mode:
+Run Snort:
 
 bash
 Copy
 Edit
 sudo snort -c /etc/snort/snort.lua -i eth0 -A alert_fast
-Simulate an attack (e.g., using Nmap) from a second device
-
-Monitor the terminal or /var/log/snort/alert_fast.txt
-
-🧾 Logs & Alerts
-Alerts are printed in real-time to the terminal
-
-You can redirect output to a file using:
-
+💾 Save Alerts
 bash
 Copy
 Edit
 sudo snort -c /etc/snort/snort.lua -i eth0 -A alert_fast > alerts.txt
-🧠 Learning Outcomes
-Understanding of NIDS components and Snort architecture
+🎥 Demo
+Demo video is attached showing attack simulation and alert detection.
 
-Rule writing for protocol-based threat detection
+📚 What I Learned
+Writing Snort v3 rules
 
-Real-time monitoring and threat alerting
+Simulating attacks using Nmap
 
-Attack simulation and detection testing
+Real-time traffic monitoring
+
+Configuring and running a modern IDS
+
+📂 Project Structure
+bash
+Copy
+Edit
+📦 Snort-NIDS
+ ┣ 📄 snort.lua
+ ┣ 📄 rules/local.rules
+ ┣ 📄 alerts.txt
+ ┣ 📄 demo.mp4
+ ┗ 📄 README.md
