@@ -1,6 +1,6 @@
 # 🛡️ Snort-based Network Intrusion Detection System (NIDS)
 
-A hands-on project from my Cybersecurity Internship at CodeAlpha, showcasing how to detect real-time network threats using custom Snort v3 rules.
+A practical implementation of a Network Intrusion Detection System using Snort v3, featuring custom detection rules and live traffic monitoring on a local network.
 
 ## ✨ Features
 
