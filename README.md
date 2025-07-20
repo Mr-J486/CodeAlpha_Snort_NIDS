@@ -35,11 +35,10 @@ alert tcp any any -> $HOME_NET 22 (msg:"SSH Handshake"; sid:5; rev:1;)
 1. Place your rules in /etc/snort/rules/local.rules
 2. Link the file inside /etc/snort/snort.lua
 3. Run Snort:
-bash
 ```sudo snort -c /etc/snort/snort.lua -i eth0 -A alert_fast```
 💾 Save Alerts
-bash
 ```sudo snort -c /etc/snort/snort.lua -i eth0 -A alert_fast > alerts.txt```
+
 🎥 Demo
 Demo video is attached showing attack simulation and alert detection.
 
