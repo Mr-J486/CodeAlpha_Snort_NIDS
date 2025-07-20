@@ -1,0 +1,244 @@
+--------------------------------------------------
+o")~   Snort++ 3.1.82.0
+--------------------------------------------------
+Loading /etc/snort/snort.lua:
+Loading snort_defaults.lua:
+Finished snort_defaults.lua:
+	hosts
+	search_engine
+	stream_ip
+	output
+	stream_tcp
+	stream_udp
+	stream_user
+	arp_spoof
+	back_orifice
+	dns
+	imap
+	normalizer
+	pop
+	rpc_decode
+	sip
+	ssh
+	ssl
+	telnet
+	cip
+	dnp3
+	iec104
+	mms
+	modbus
+	s7commplus
+	dce_smb
+	dce_tcp
+	dce_udp
+	dce_http_server
+	gtp_inspect
+	ips
+	classifications
+	references
+	binder
+	wizard
+	appid
+	js_norm
+	file_policy
+	file_id
+	http2_inspect
+	http_inspect
+	ftp_data
+	ftp_client
+	ftp_server
+	smtp
+	port_scan
+	dce_http_proxy
+	netflow
+	stream_file
+	stream_icmp
+	stream
+	so_proxy
+	process
+	network
+	packets
+	trace
+	active
+	alerts
+	daq
+	decode
+	host_cache
+	host_tracker
+Finished /etc/snort/snort.lua:
+Loading file_id.rules_file:
+Loading file_magic.rules:
+Finished file_magic.rules:
+Finished file_id.rules_file:
+Loading rules/local.rules:
+Finished rules/local.rules:
+--------------------------------------------------
+ips policies rule stats
+              id  loaded  shared enabled    file
+               0     837       0     837    /etc/snort/snort.lua
+--------------------------------------------------
+rule counts
+       total rules loaded: 837
+               text rules: 213
+            builtin rules: 624
+            option chains: 837
+            chain headers: 7
+--------------------------------------------------
+port rule counts
+             tcp     udp    icmp      ip
+     any     624       0       2       0
+     dst       3       0       0       0
+   total     627       0       2       0
+--------------------------------------------------
+service rule counts          to-srv  to-cli
+                  file_id:      208     208
+                    total:      208     208
+--------------------------------------------------
+fast pattern groups
+                to_server: 1
+                to_client: 1
+--------------------------------------------------
+search engine (ac_bnfa)
+                instances: 2
+                 patterns: 416
+            pattern chars: 2508
+               num states: 1778
+         num match states: 370
+             memory scale: KB
+             total memory: 68.5879
+           pattern memory: 18.6973
+        match list memory: 27.3281
+        transition memory: 22.3125
+appid: MaxRss diff: 2876
+appid: patterns loaded: 300
+--------------------------------------------------
+pcap DAQ configured to passive.
+Commencing packet processing
+++ [0] eth0
+07/20-23:03:12.719326 [**] [1:1000004:1] "TELNET Connection Attempt" [**] [Priority: 0] {TCP} 192.168.1.8:64404 -> 192.168.1.9:23
+07/20-23:03:12.734062 [**] [1:1000001:1] "RDP Connection Initiation" [**] [Priority: 0] {TCP} 192.168.1.8:64404 -> 192.168.1.9:3389
+07/20-23:03:12.734062 [**] [122:1:1] "(port_scan) TCP portscan" [**] [Priority: 3] {TCP} 192.168.1.8:64404 -> 192.168.1.9:3389
+07/20-23:03:12.736028 [**] [1:1000005:1] "SSH Handshake Detected" [**] [Priority: 0] {TCP} 192.168.1.8:64404 -> 192.168.1.9:22
+** caught int signal
+== stopping
+07/20-23:03:15.038942 [**] [1:1000002:1] "ICMP Ping Request" [**] [Priority: 0] {ICMP} 192.168.1.8 -> 192.168.1.9
+07/20-23:03:15.038982 [**] [1:1000003:1] "ICMP Ping Reply" [**] [Priority: 0] {ICMP} 192.168.1.9 -> 192.168.1.8
+07/20-23:03:15.069248 [**] [1:1000002:1] "ICMP Ping Request" [**] [Priority: 0] {ICMP} 192.168.1.8 -> 192.168.1.9
+07/20-23:03:15.069275 [**] [1:1000003:1] "ICMP Ping Reply" [**] [Priority: 0] {ICMP} 192.168.1.9 -> 192.168.1.8
+07/20-23:03:15.191729 [**] [116:401:1] "(tcp) Nmap XMAS attack detected" [**] [Priority: 3] {TCP} 192.168.1.8:37735 -> 192.168.1.9:1
+07/20-23:03:15.191729 [**] [116:423:1] "(tcp) TCP has no SYN, ACK, or RST" [**] [Priority: 3] {TCP} 192.168.1.8:37735 -> 192.168.1.9:1
+07/20-23:03:15.191729 [**] [116:422:1] "(tcp) TCP PDU missing ack for established session" [**] [Priority: 3] {TCP} 192.168.1.8:37735 -> 192.168.1.9:1
+07/20-23:03:16.189394 [**] [1:1000002:1] "ICMP Ping Request" [**] [Priority: 0] {ICMP} 192.168.1.8 -> 192.168.1.9
+07/20-23:03:16.189455 [**] [1:1000003:1] "ICMP Ping Reply" [**] [Priority: 0] {ICMP} 192.168.1.9 -> 192.168.1.8
+07/20-23:03:16.219566 [**] [1:1000002:1] "ICMP Ping Request" [**] [Priority: 0] {ICMP} 192.168.1.8 -> 192.168.1.9
+07/20-23:03:16.219632 [**] [1:1000003:1] "ICMP Ping Reply" [**] [Priority: 0] {ICMP} 192.168.1.9 -> 192.168.1.8
+07/20-23:03:16.402267 [**] [116:401:1] "(tcp) Nmap XMAS attack detected" [**] [Priority: 3] {TCP} 192.168.1.8:37991 -> 192.168.1.9:1
+07/20-23:03:16.402267 [**] [116:423:1] "(tcp) TCP has no SYN, ACK, or RST" [**] [Priority: 3] {TCP} 192.168.1.8:37991 -> 192.168.1.9:1
+07/20-23:03:16.402267 [**] [116:422:1] "(tcp) TCP PDU missing ack for established session" [**] [Priority: 3] {TCP} 192.168.1.8:37991 -> 192.168.1.9:1
+07/20-23:03:17.846548 [**] [112:1:1] "(arp_spoof) unicast ARP request" [**] [Priority: 3] {ARP}  -> 
+07/20-23:03:20.263764 [**] [116:6:1] "(ipv4) IPv4 datagram length > captured length" [**] [Priority: 3] {eth}  -> 
+07/20-23:03:31.414204 [**] [112:1:1] "(arp_spoof) unicast ARP request" [**] [Priority: 3] {ARP}  -> 
+07/20-23:03:31.435055 [**] [112:1:1] "(arp_spoof) unicast ARP request" [**] [Priority: 3] {ARP}  -> 
+07/20-23:03:37.193306 [**] [116:6:1] "(ipv4) IPv4 datagram length > captured length" [**] [Priority: 3] {eth}  -> 
+-- [0] eth0
+--------------------------------------------------
+Packet Statistics
+--------------------------------------------------
+daq
+                 received: 2044
+                 analyzed: 2044
+                    allow: 2044
+                 rx_bytes: 122333
+--------------------------------------------------
+codec
+                    total: 2044        	(100.000%)
+                 discards: 3           	(  0.147%)
+                      arp: 10          	(  0.489%)
+                      eth: 2044        	(100.000%)
+                    icmp4: 11          	(  0.538%)
+                 icmp4_ip: 3           	(  0.147%)
+                     ipv4: 2034        	( 99.511%)
+                      tcp: 2012        	( 98.434%)
+                      udp: 9           	(  0.440%)
+--------------------------------------------------
+Module Statistics
+--------------------------------------------------
+appid
+                  packets: 2031
+        processed_packets: 2023
+          ignored_packets: 8
+           total_sessions: 1009
+       service_cache_adds: 4
+             bytes_in_use: 608
+             items_in_use: 4
+--------------------------------------------------
+arp_spoof
+                  packets: 10
+--------------------------------------------------
+back_orifice
+                  packets: 7
+--------------------------------------------------
+binder
+              raw_packets: 20
+                new_flows: 1009
+                 inspects: 1029
+--------------------------------------------------
+detection
+                 analyzed: 2044
+               hard_evals: 14
+                   alerts: 23
+             total_alerts: 23
+                   logged: 23
+--------------------------------------------------
+port_scan
+                  packets: 2032
+                 trackers: 12
+--------------------------------------------------
+search_engine
+     non_qualified_events: 3
+         qualified_events: 11
+--------------------------------------------------
+stream
+                    flows: 1009
+--------------------------------------------------
+stream_icmp
+                 sessions: 2
+                      max: 2
+                  created: 2
+                 released: 2
+--------------------------------------------------
+stream_tcp
+                 sessions: 1002
+                      max: 1002
+                  created: 1002
+                 released: 1002
+             instantiated: 1002
+                   setups: 1002
+             syn_trackers: 1002
+                     syns: 1002
+                   resets: 1002
+--------------------------------------------------
+stream_udp
+                 sessions: 5
+                      max: 5
+                  created: 5
+                 released: 5
+              total_bytes: 1349
+--------------------------------------------------
+udp
+        bad_udp4_checksum: 1
+--------------------------------------------------
+wizard
+                udp_scans: 5
+               udp_misses: 5
+--------------------------------------------------
+Summary Statistics
+--------------------------------------------------
+process
+                  signals: 1
+--------------------------------------------------
+timing
+                  runtime: 00:00:30
+                  seconds: 30.403511
+                 pkts/sec: 67
+o")~   Snort exiting
