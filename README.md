@@ -32,40 +32,29 @@ alert tcp any any -> $HOME_NET 23 (msg:"TELNET Connection Attempt"; sid:4; rev:1
 alert tcp any any -> $HOME_NET 22 (msg:"SSH Handshake"; sid:5; rev:1;)
 ```
 🚀 How to Run
-Place your rules in /etc/snort/rules/local.rules
-
-Link the file inside /etc/snort/snort.lua
-
-Run Snort:
-
+1. Place your rules in /etc/snort/rules/local.rules
+2. Link the file inside /etc/snort/snort.lua
+3. Run Snort:
 bash
-Copy
-Edit
-sudo snort -c /etc/snort/snort.lua -i eth0 -A alert_fast
+```sudo snort -c /etc/snort/snort.lua -i eth0 -A alert_fast```
 💾 Save Alerts
 bash
-Copy
-Edit
-sudo snort -c /etc/snort/snort.lua -i eth0 -A alert_fast > alerts.txt
+```sudo snort -c /etc/snort/snort.lua -i eth0 -A alert_fast > alerts.txt```
 🎥 Demo
 Demo video is attached showing attack simulation and alert detection.
 
 📚 What I Learned
-Writing Snort v3 rules
-
-Simulating attacks using Nmap
-
-Real-time traffic monitoring
-
-Configuring and running a modern IDS
+- Writing Snort v3 rules
+- Simulating attacks using Nmap
+- Real-time traffic monitoring
+- Configuring and running a modern IDS
 
 📂 Project Structure
-bash
-Copy
-Edit
+```
 📦 Snort-NIDS
  ┣ 📄 snort.lua
  ┣ 📄 rules/local.rules
  ┣ 📄 alerts.txt
  ┣ 📄 demo.mp4
  ┗ 📄 README.md
+```
